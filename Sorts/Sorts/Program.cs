@@ -35,6 +35,46 @@ namespace Sorts
         }
 
 
+        //Partição para quick
+        public static int partition(int[] arr) {
+
+            int left = 0;
+            int right = arr.Count();
+            int pivot = (left + right) / 2;
+
+
+            while (true) {
+                //Caminha do indice 0 para a direita, até encontrar um numero maior que o pivô
+                while (arr[left] < pivot)
+                    left++;
+
+                //Caminha do indice final para a esquerda, até encontrar um numero menor que o pivô
+                while (arr[right] > pivot)
+                    right--;
+
+                //se left e right nao se cruzarem, troca os numeros nas pos left e right entre si
+                if (left > right) {
+                    int temp = arr[right];
+                    arr[right] = arr[left];
+                    arr[left] = temp;
+                }
+                else{
+                    return right;
+                }
+            }
+
+        }
+
+        
+
+
+        public static void selectionSort(int[] arr) {
+
+
+
+        }
+
+
 
         public static void Main(string[] args)
         {
